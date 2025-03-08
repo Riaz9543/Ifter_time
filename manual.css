@@ -1,0 +1,120 @@
+/* manual.css */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+    background: #1e3c72;
+    margin: 0;
+    padding: 15px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 95%;
+    max-width: 100%;
+}
+
+h1 {
+    color: #2a5298;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.input-group {
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #444;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.input-group input {
+    width: 90%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f8f9fa;
+    -webkit-appearance: none;
+}
+
+.input-group input:focus {
+    border-color: #2a5298;
+    outline: none;
+    background: #fff;
+}
+
+button#calculateButton {
+    width: 100%;
+    padding: 15px;
+    background: #2a5298;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+button#calculateButton:active {
+    filter: brightness(0.9);
+}
+
+.results {
+    margin-top: 1.5rem;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+}
+
+.results p {
+    margin: 0.8rem 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.results strong {
+    color: #2a5298;
+    font-weight: 600;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .input-group input {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+    
+    button#calculateButton {
+        padding: 14px;
+        font-size: 1rem;
+    }
+    
+    .results {
+        padding: 12px;
+    }
+}
