@@ -48,7 +48,7 @@ function calculateSunset(latitude, longitude, date) {
 
     // Convert Julian Day to datetime
     const sunset_utc = new Date(Date.UTC(2000, 0, 1, 12) + (sunset_jd - 2451545.0) * 86400000);
-    
+    //alert(sunset_utc)
     return sunset_utc;
 }
 
@@ -57,7 +57,7 @@ function formatTime(date) {
 }
 
 // Function to get user's location and calculate sunset
-function getUserLocationAndCalculateSunset() {
+/*function getUserLocationAndCalculateSunset() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -81,6 +81,57 @@ function getUserLocationAndCalculateSunset() {
                 document.getElementById("date").textContent = date.toDateString();
                 document.getElementById("sunsetUTC").textContent = formatTime(sunset_utc);
                 document.getElementById("sunsetLocal").textContent = formatTime(sunset_local);
+            },
+            (error) => {
+                // Handle errors
+                if (error.code === error.PERMISSION_DENIED) {
+                    alert("Please enable your location services to use this feature.");
+                } else {
+                    console.error("Error fetching location:", error);
+                    alert("Unable to retrieve your location. Please try again later.");
+                }
+                document.getElementById("location").textContent = "Location unavailable.";
+            }
+        );
+    } else {
+        console.error("Geolocation is not supported by this browser.");
+        alert("Your browser does not support geolocation. Please use a modern browser.");
+        document.getElementById("location").textContent = "Geolocation not supported.";
+    }
+}
+
+// Call the function to get location and calculate sunset
+getUserLocationAndCalculateSunset();
+*/
+function getUserLocationAndCalculateSunset() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+
+                // Update location text
+                document.getElementById("location").textContent = `Lat: ${latitude.toFixed(4)}, Lon: ${longitude.toFixed(4)}`;
+
+                // Get current date
+                const date = getCurrentDate();
+
+                // Calculate sunset in UTC
+                const sunset_utc = calculateSunset(latitude, longitude, date);
+
+                // Adjust for local time (Bangladesh Standard Time, UTC+6)
+                const timezoneOffset = 6;
+                const sunset_local = new Date(sunset_utc.getTime() + timezoneOffset * 60 * 60 * 1000);
+
+                // Display results
+                document.getElementById("date").textContent = date.toDateString();
+                document.getElementById("sunsetUTC").textContent = formatTime(sunset_local);
+                
+                document.getElementById("sunsetLocal").textContent = formatTime(sunset_utc);
+
+                // Save sunset local time in localStorage
+                localStorage.setItem("sunsetLocalTime", sunset_local.toISOString());
+                console.log("Sunset local time saved to localStorage:", sunset_local.toISOString());
             },
             (error) => {
                 // Handle errors
