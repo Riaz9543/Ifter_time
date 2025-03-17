@@ -57,52 +57,6 @@ function formatTime(date) {
 }
 
 // Function to get user's location and calculate sunset
-/*function getUserLocationAndCalculateSunset() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
-
-                // Update location text
-                document.getElementById("location").textContent = `Lat: ${latitude.toFixed(4)}, Lon: ${longitude.toFixed(4)}`;
-
-                // Get current date
-                const date = getCurrentDate();
-
-                // Calculate sunset in UTC
-                const sunset_utc = calculateSunset(latitude, longitude, date);
-
-                // Adjust for local time (Bangladesh Standard Time, UTC+6)
-                const timezoneOffset = 6;
-                const sunset_local = new Date(sunset_utc.getTime() + timezoneOffset * 60 * 60 * 1000);
-
-                // Display results
-                document.getElementById("date").textContent = date.toDateString();
-                document.getElementById("sunsetUTC").textContent = formatTime(sunset_utc);
-                document.getElementById("sunsetLocal").textContent = formatTime(sunset_local);
-            },
-            (error) => {
-                // Handle errors
-                if (error.code === error.PERMISSION_DENIED) {
-                    alert("Please enable your location services to use this feature.");
-                } else {
-                    console.error("Error fetching location:", error);
-                    alert("Unable to retrieve your location. Please try again later.");
-                }
-                document.getElementById("location").textContent = "Location unavailable.";
-            }
-        );
-    } else {
-        console.error("Geolocation is not supported by this browser.");
-        alert("Your browser does not support geolocation. Please use a modern browser.");
-        document.getElementById("location").textContent = "Geolocation not supported.";
-    }
-}
-
-// Call the function to get location and calculate sunset
-getUserLocationAndCalculateSunset();
-*/
 function getUserLocationAndCalculateSunset() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
