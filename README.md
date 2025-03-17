@@ -17,18 +17,6 @@ A simple web-based Iftar Time Calculator that calculates the iftar (sunset) time
 
 ---
 
-📁 Project Structure
-
-/Iftar-Time-Calculator
-│── index.html        # Main web page
-│── style.css         # Styling for UI
-│── script.js         # JavaScript for calculations & UI interactions
-│── manual.html       # Manual calculation page
-│── img/              # Images & assets
-└── README.md         # Project documentation
-
-
----
 
 📜 How It Works
 
