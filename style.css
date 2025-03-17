@@ -1,31 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  background: linear-gradient(135deg, #1a237e, #0d47a1);
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border-radius: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1 {
-    color: #ff5722;
+  color: #1a237e;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-p {
-    font-size: 18px;
-    margin: 10px 0;
+h1::before {
+  content: '🕌';
+  font-size: 2rem;
 }
 
-span {
-    font-weight: bold;
-    color: #007bff;
+.header p {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.info-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.info-card p {
+  margin: 0.75rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.info-card strong {
+  color: #1a237e;
+  font-weight: 600;
+}
+
+#location {
+  color: #e65100;
+  font-weight: 500;
+}
+
+.manual-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 12px 24px;
+  background: #1a237e;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.2);
+}
+
+.manual-link:hover {
+  background: #0d47a1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(13, 71, 161, 0.3);
+}
+
+.time-highlight {
+  color: #d32f2f;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Warning Box Styles */
+.warning-box {
+  background: #fff3e0;
+  border-left: 4px solid #FFA726;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+  animation: fadeIn 0.8s ease;
+}
+
+.warning-box::before {
+  content: "⚠️";
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  background: #FFA726;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(255, 167, 38, 0.3);
+}
+
+.warning-title {
+  color: #EF6C00;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+}
+
+.warning-text-container {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  max-height: 3.6em;
+  /* Shows first 2 lines */
+  line-height: 1.4em;
+}
+
+.warning-text-container.expanded {
+  max-height: 500px;
+  /* Enough to show all text */
+}
+
+.warning-text {
+  color: #5d4037;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.read-more-btn {
+  display: inline-block;
+  color: #EF6C00;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  color: #d84315;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .info-card p {
+    font-size: 1rem;
+  }
+  
+  .warning-box {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+  
+  .warning-text {
+    font-size: 0.9rem;
+  }
 }
