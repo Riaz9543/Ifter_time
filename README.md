@@ -1,4 +1,4 @@
-🌙 Iftar Time Calculator
+# 🌙 Iftar Time Calculator
 
 A simple web-based Iftar Time Calculator that calculates the iftar (sunset) time based on mathematical sunset calculations using JavaScript. It utilizes geolocation to fetch the user's latitude and longitude, then calculates the sunset time accordingly.
 
@@ -6,7 +6,7 @@ view this Page https://riaz9543.github.io/Ifter_time/
 
 ---
 
-🚀 Features
+# 🚀 Features
 
 ✅ Automatic Location Detection – Uses your device's GPS to fetch coordinates.
 ✅ Sunset Calculation – Computes sunset time based on astronomical formulas.
@@ -19,7 +19,7 @@ view this Page https://riaz9543.github.io/Ifter_time/
 ---
 
 
-📜 How It Works
+# 📜 How It Works
 
 1. The user grants location permission for accurate calculations.
 
