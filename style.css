@@ -91,9 +91,16 @@ h1::before {
   font-weight: 500;
 }
 
+.navigation-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
 .manual-link {
   display: inline-block;
-  margin-top: 1.5rem;
   padding: 12px 24px;
   background: #1a237e;
   color: white;
@@ -210,5 +217,14 @@ h1::before {
   
   .warning-text {
     font-size: 0.9rem;
+  }
+  
+  .navigation-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .manual-link {
+    font-size: 0.95rem;
   }
 }
