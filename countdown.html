@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iftar Countdown - Ramadan Kareem</title>
+    <link rel="icon" type="image/webp" href="img/file-EE3cqpwnkQERoAGFFn2WPU.webp">
+    <link rel="stylesheet" href="countdown-style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Iftar Countdown</h1>
+            <p>Time remaining until Iftar</p>
+        </div>
+
+        <div class="countdown-container">
+            <div class="countdown-display">
+                <div class="time-block">
+                    <span class="time-number" id="hours">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-separator">:</div>
+                <div class="time-block">
+                    <span class="time-number" id="minutes">00</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-separator">:</div>
+                <div class="time-block">
+                    <span class="time-number" id="seconds">00</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <p><strong>🕌 Today's Iftar Time:</strong> <span id="iftarTime" class="time-highlight">Loading...</span></p>
+            <p><strong>📍 Location:</strong> <span id="location" class="location-text">Getting location...</span></p>
+            <p><strong>📅 Date:</strong> <span id="currentDate" class="date-text"></span></p>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">0% of the day completed</div>
+        </div>
+
+        <div class="message-container">
+            <div class="countdown-message" id="countdownMessage">
+                <span id="motivationalText">Stay strong in your fast, Iftar is approaching! 🌙</span>
+            </div>
+        </div>
+
+        <div class="navigation-links">
+            <a href="index.html" class="nav-link">🏠 Back to Calculator</a>
+            <a href="manual.html" class="nav-link">⚙️ Manual Time</a>
+        </div>
+
+        <!-- Completion Modal -->
+        <div class="modal" id="iftarModal">
+            <div class="modal-content">
+                <h2>🌅 Iftar Time!</h2>
+                <p>It's time to break your fast!</p>
+                <p>Ramadan Mubarak! 🌙</p>
+                <button onclick="closeModal()" class="modal-button">Alhamdulillah</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="countdown.js"></script>
+</body>
+</html>
