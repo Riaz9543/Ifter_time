@@ -1,17 +1,4 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyDKRzGKP-dKDhHZGdnkLaebbyfyP5uLZd0",
-    authDomain: "ifter-time.firebaseapp.com",
-    projectId: "ifter-time",
-    storageBucket: "ifter-time.firebasestorage.app",
-    messagingSenderId: "469568877782",
-    appId: "1:469568877782:web:afb662e204925656e34577",
-    measurementId: "G-RDCNE8QW6D"
-};
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
 function getCurrentDate() {
     const now = new Date();
     const year = now.getFullYear();
